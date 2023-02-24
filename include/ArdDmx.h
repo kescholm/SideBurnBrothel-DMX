@@ -196,6 +196,8 @@ class ArdDmx
      */
     void SetPixel(uint16_t pixel, uint8_t red, uint8_t green, uint8_t blue, uint8_t white = 0);
 
+    void SetPixelHSV(uint16_t pixel, uint8_t hue, uint8_t sat, uint8_t value, uint8_t white = 0);
+
     /**
      * @brief Set all pixels to red, green, and blue values.
      *
@@ -373,6 +375,15 @@ inline void ArdDmx::SetPixel(uint16_t pixel, uint8_t red, uint8_t green, uint8_t
     if (pixel < m_params.num_leds)
     {
         m_leds[pixel].setRGB(red, green, blue);
+        m_white_leds[pixel] = white;
+    }
+}
+
+inline void ArdDmx::SetPixelHSV(uint16_t pixel, uint8_t hue, uint8_t sat, uint8_t val, uint8_t white)
+{
+    if (pixel < m_params.num_leds)
+    {
+        m_leds[pixel].setHSV(hue, sat, val);
         m_white_leds[pixel] = white;
     }
 }
