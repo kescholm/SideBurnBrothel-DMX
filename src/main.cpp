@@ -54,11 +54,6 @@ void setup()
     }
 }
 
-// Can use g_dmx methods for animations:
-//
-//  g_dmx.
-//
-
 // *** REPLACE FROM HERE ***
 // ---> here we declare the effect function <---
 

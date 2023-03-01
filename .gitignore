@@ -1,2 +1,8 @@
+
+# platformio
 .pio
 .vscode
+
+# cmake
+cmake-build*/
+build*/
